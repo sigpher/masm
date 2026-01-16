@@ -1,0 +1,11 @@
+{
+    "masmtasm.ASM.assembler": "MASM-v5.00",
+    "masmtasm.ASM.emulator": "dosbox-x",
+    "masmtasm.dosbox.run": "keep",
+    "files.exclude": {
+        "CREF.EXE": true,
+        "LIB.EXE": true,
+        "LINK.EXE": true,
+        "MASM.EXE": true
+    }
+}

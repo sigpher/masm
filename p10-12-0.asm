@@ -14,7 +14,7 @@ code segment
              mov  bx, 0
 
              mov  cx, 4
-    s:       mov  si, 0
+    s:       mov  si, bx
              call capital
              add  bx, 5
              loop s
@@ -22,20 +22,17 @@ code segment
              mov  ax, 4c00h
              int  21h
 
-    capital:
+    capital: push si
              push cx
-             pop  bx
-
-    change:  mov  cl, [bx+si]
-             mov  ch, 0
+    change:  mov  ch, 0
+             mov  cl, ds:[si]
              jcxz ok
-             and  byte ptr [bx+si], 11011111B
+             add  byte ptr [si], 11011111B
              inc  si
              jmp  change
 
-    ok:
-             pop  bx
-             pop  cx
+    ok:      pop  cx
+             pop  si
              ret
 code ends
 end start

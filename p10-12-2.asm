@@ -22,8 +22,6 @@ code segment
              mov  ax, 4c00h
              int  21h
 
-
-
     capital: push cx
              push si
     change:  mov  cl, [si]
